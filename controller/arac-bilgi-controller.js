@@ -49,6 +49,17 @@ router.get('/list/id/:camId', (req, res) => {
 
 });
 
-
+router.post("/", function(req, res, next){
+ 
+    AracBilgi({
+        plate: req.body.plate,
+        time: req.body.time,
+        camId: req.body.camId,
+    }).save().then(() => {
+        res.json("Kaydetme İşlemi Başarılı."+req.body.plate);
+    }).catch((err) => {
+        res.json("Kaydetme İşleminde Hata Oluştu.");
+    });
+});
 
 module.exports = router;

@@ -24,4 +24,17 @@ router.get('/list/id/:camId', (req, res) => {
 
 });
 
+router.post("/", function(req, res, next){
+ 
+    Kamera({
+        camId: req.body.camId,
+        lat: req.body.lat,
+        long: req.body.long,
+    }).save().then(() => {
+        res.json("Kaydetme İşlemi Başarılı.");
+    }).catch((err) => {
+        res.json("Kaydetme İşleminde Hata Oluştu.");
+    });
+});
+
 module.exports = router;
