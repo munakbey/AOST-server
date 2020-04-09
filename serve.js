@@ -3,6 +3,7 @@ const bodyparser = require('body-parser');
 const express = require('express');
 const mainController=require('./controller/arac-bilgi-controller');
 const camController=require('./controller/cam-controller');
+const klnIstekController=require('./controller/kullanici-istek-controller');
 var app=express();
 app.use(bodyparser.json());
 const expressHandlebars = require('express-handlebars');
@@ -21,3 +22,5 @@ app.listen(3000,() =>{
 
 app.use('/arac',mainController);
 app.use('/cam',camController);
+app.use('/klnistek',klnIstekController);
+
