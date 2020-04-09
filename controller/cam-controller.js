@@ -10,7 +10,7 @@ router.get('/list', (req, res) => {
         res.json(data);
        console.log(data)
     }
-);
+).sort({time: -1});
 });
 
 router.get('/list/id/:camId', (req, res) => {
