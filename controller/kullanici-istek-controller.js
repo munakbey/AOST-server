@@ -24,12 +24,12 @@ router.put("/:id", async (request, response) => {
 });
 
 router.post("/", function(req, res, next){
- 
+
     KullaniciIstek({
         plaka: req.body.plaka,
-        camId_1: req.body.camId_1,
-        camId_2: req.body.camId_2,
+        hız: req.body.hız,
         mesafe: req.body.mesafe,
+        tarih: req.body.tarih,
     }).save().then(() => {
         res.json("Kaydetme İşlemi Başarılı."+req.body.plate);
     }).catch((err) => {
