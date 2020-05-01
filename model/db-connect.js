@@ -10,7 +10,7 @@ mongoose.connect('mongodb+srv://munakbey:admin@cluster0-br351.mongodb.net/test?r
     if (!err) { console.log('MongoDB Connection Succeeded.') }
     else { console.log('Error in DB connection : ' + err) }
 });
-
+/*
 var arac1=new KullaniciIstek({
     plaka: "String",
     hız:"String",
@@ -22,7 +22,7 @@ arac1.save((error)=>{
         throw error;
     }
     console.log("saved!!!!!")
-})
+})*/
 
 /*
 Camera.find({},(error,data)=>{
