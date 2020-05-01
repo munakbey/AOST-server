@@ -41,4 +41,13 @@ router.post("/", function(req, res, next){
         res.json("Kaydetme İşleminde Hata Oluştu.");
     });
 });
+
+
+router.get('/sil/:id', (req, res) => {
+    KullaniciIstek.findByIdAndRemove(req.params.id, (err, doc) => {
+        if (!err) {
+            console.log('Silme basarili :');        }
+        else { console.log('Silme hatası :' + err); }
+    });
+});
 module.exports = router;
