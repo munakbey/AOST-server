@@ -43,10 +43,11 @@ router.post("/", function(req, res, next){
 });
 
 
-router.get('/sil/:id', (req, res) => {
-    KullaniciIstek.findByIdAndRemove(req.params.id, (err, doc) => {
+router.delete('/sil/:id', (req, res) => {
+    KullaniciIstek.findByIdAndDelete(req.params.id, (err, doc) => {
         if (!err) {
-            console.log('Silme basarili :');        }
+            res.json('Silme basarili :');   
+             }
         else { console.log('Silme hatası :' + err); }
     });
 });
